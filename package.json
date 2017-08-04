@@ -1,0 +1,31 @@
+{
+	"name": "irsi-pettycash-server",
+	"version": "1.0.0",
+	"description": "",
+	"main": "server.js",
+	"scripts": {
+		"start": "concurrently \"npm run server\" \"npm run client\"",
+		"server": "node server.js",
+		"client": "node start-client.js",
+		"lint": "eslint ."
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Junicus/irsi-pettycash.git"
+	},
+	"author": "Nelson Segarra",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/Junicus/irsi-pettycash/issues"
+	},
+	"homepage": "https://github.com/Junicus/irsi-pettycash#readme",
+	"dependencies": {
+		"babel-core": "^6.25.0",
+		"express": "^4.15.3",
+		"fs": "0.0.1-security",
+		"morgan": "^1.8.2"
+	},
+	"devDependencies": {
+		"concurrently": "^3.5.0"
+	}
+}
