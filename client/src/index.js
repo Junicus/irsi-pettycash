@@ -1,8 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import Routes from './routes';
 import registerServiceWorker from './registerServiceWorker';
+import {Provider} from 'react-redux';
+import store from './store';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import './index.css';
+
+const MOUNT = document.getElementById('root');
+const renderRoutes = Comp => ReactDOM.render(Comp, MOUNT);
+
+if (module.hot) {
+	module.hot.accept('./routes', () => {
+		const NextRoutes = require('./routes').default
+		renderRoutes(
+			<Provider store={store}>
+				<NextRoutes />
+			</Provider>
+		);
+	});
+}
+
+renderRoutes(
+	<Provider store={store}>
+		<Routes />
+	</Provider>
+);
+
 registerServiceWorker();

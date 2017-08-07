@@ -1,8 +1,11 @@
 const express = require('express');
+const apiController = require('./controllers/api');
 
 const app = express();
 
 app.set('port', process.env.PORT || 3001);
+
+app.get('/api', apiController.getApi);
 
 if (process.env.NODE_ENV === 'production') {
 	app.use(express.static('client/build'));

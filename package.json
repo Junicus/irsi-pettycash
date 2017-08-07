@@ -4,9 +4,11 @@
 	"description": "",
 	"main": "server.js",
 	"scripts": {
-		"start": "concurrently \"npm run server\" \"npm run client\"",
-		"server": "node server.js",
-		"client": "node start-client.js",
+		"start": "concurrently \"npm run start:server\" \"npm run start:client\"",
+		"watch": "concurrently \"npm run watch:server\" \"npm run start:client\"",
+		"start:server": "node server.js",
+		"start:client": "node start-client.js",
+		"watch:server": "nodemon server.js",
 		"lint": "eslint ."
 	},
 	"repository": {
@@ -26,6 +28,7 @@
 		"morgan": "^1.8.2"
 	},
 	"devDependencies": {
-		"concurrently": "^3.5.0"
+		"concurrently": "^3.5.0",
+		"nodemon": "^1.11.0"
 	}
 }
