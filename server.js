@@ -6,6 +6,7 @@ const app = express();
 app.set('port', process.env.PORT || 3001);
 
 app.get('/api', apiController.getApi);
+app.get('/api/invoices', apiController.getInvoices);
 
 if (process.env.NODE_ENV === 'production') {
 	app.use(express.static('client/build'));
