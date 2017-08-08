@@ -2,7 +2,7 @@ import { CHANGE_SELECTED_DATE } from '../actions';
 import moment from 'moment';
 
 const initialState = {
-	selectedDate: moment().format('MMM D, YYYY')
+	selectedDate: moment()
 }
 
 export function selectedDate(state = initialState, action) {

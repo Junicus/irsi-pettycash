@@ -7,7 +7,7 @@ import moment from 'moment';
 const loggerMiddleware = createLogger();
 
 export const initialState = {
-	selectedDate: moment().format('MMM D, YYYY')
+	selectedDate: moment()
 };
 
 const enhancers = [];

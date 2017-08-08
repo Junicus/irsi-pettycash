@@ -1,0 +1,16 @@
+.invoice {
+    border: 1px solid blue;
+    display: flex;
+}
+
+.invoice-date {
+    padding-right: 5px;
+}
+
+.invoice-vendor {
+    padding-right: 5px;
+}
+
+.invoice-amount {
+    padding-right: 5px;
+}
