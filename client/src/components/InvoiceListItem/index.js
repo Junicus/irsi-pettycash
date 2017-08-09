@@ -12,12 +12,17 @@ export class InvoiceListItem extends Component {
 			isExpanded: false
 		};
 		this.handleChangeExpand = this.handleChangeExpand.bind(this);
+		this.handleEditClick = this.handleEditClick.bind(this);
 	}
 
 	handleChangeExpand() {
 		this.setState({
 			isExpanded: !this.state.isExpanded
 		});
+	}
+
+	handleEditClick() {
+
 	}
 
 	render() {
@@ -40,7 +45,10 @@ export class InvoiceListItem extends Component {
 					<td className="invoice-date">{date}</td>
 					<td className="invoice-vendor">{vendor}</td>
 					<td className="invoice-amount">{amount}</td>
-					<td className="invoice-actions"><Link to={`/invoice/${id}`}>Edit</Link></td>
+					<td className="invoice-actions"><Link to={{
+						pathname: `/invoice/${id}`,
+						state: { invoice: this.props }
+					}} >Edit</Link></td>
 				</tr>
 				{
 					isExpanded &&

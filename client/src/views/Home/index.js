@@ -1,13 +1,13 @@
 import React from 'react';
 import { pageWithLayout } from '../../containers/page';
-import HomeContainer from '../../containers/HomeContainer';
+import SelectDateContainer from '../../containers/SelectDateContainer';
 import InvoiceList from '../../containers/InvoiceList';
 
 import './style.css';
 
 export const Home = props => (
 	<div>
-		<HomeContainer />
+		<SelectDateContainer />
 		<InvoiceList />
 	</div>
 )

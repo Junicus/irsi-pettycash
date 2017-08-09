@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import { pageWithoutLayout } from './containers/page';
-import { EditInvoice } from './components/EditInvoice';
 
 import Home from './views/Home';
 import About from './views/About';
+import EditInvoice from './views/EditInvoice';
 
 export const Routes = props => (
 	<div className="app">

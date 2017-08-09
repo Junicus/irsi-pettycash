@@ -2,6 +2,7 @@ import { REQUEST_INVOICES, RECEIVED_INVOICES } from '../actions';
 
 const initialState = {
 	isFetching: false,
+	isDirty: false,
 	invoices: []
 }
 

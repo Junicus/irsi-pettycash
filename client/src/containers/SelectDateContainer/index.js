@@ -4,8 +4,9 @@ import DatePicker from 'react-datepicker';
 import { changeSelectedDate } from '../../actions';
 
 import 'react-datepicker/dist/react-datepicker.css';
+import './style.css';
 
-class HomeContainer extends Component {
+class SelectDateContainer extends Component {
 	constructor(props) {
 		super(props);
 		this.handleChange = this.handleChange.bind(this);
@@ -16,10 +17,16 @@ class HomeContainer extends Component {
 		dispatch(changeSelectedDate(date));
 	}
 
+	componentDidMount() {
+		const { dispatch, selectedDate } = this.props;
+		dispatch(changeSelectedDate(selectedDate));
+	}
+
 	render() {
 		const { selectedDate } = this.props;
 		return (
-			< div className="home" >
+			<div className="select-date-container">
+				Select Date:
 				<DatePicker
 					selected={selectedDate}
 					onChange={this.handleChange} />
@@ -35,4 +42,4 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(mapStateToProps)(HomeContainer);
+export default connect(mapStateToProps)(SelectDateContainer);
