@@ -103,8 +103,23 @@ let getInvoices = (req, res) => {
 	}
 }
 
-
+let getInvoice = (req, res) => {
+	const { id } = req.params;
+	if (id) {
+		const invoice = mockData.find((e) => {
+			return e.id == id;
+		});
+		if (invoice) {
+			res.json(invoice);
+		} else {
+			res.sendStatus(404);
+		}
+	} else {
+		res.sendStatus(500);
+	}
+}
 
 module.exports = {
-	getInvoices
+	getInvoices,
+	getInvoice
 }
